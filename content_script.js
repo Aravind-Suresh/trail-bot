@@ -2,13 +2,13 @@
 * @Author: aravind
 * @Date:   2016-07-29T22:44:05+05:30
 * @Last modified by:   aravind
-* @Last modified time: 2016-07-30T12:58:22+05:30
+* @Last modified time: 2016-07-30T13:02:01+05:30
 */
 
 var tasks = [];
 var events = ['click', 'keypress'];
-var eventHandler = function(event) {
-  event = $.Event(event);
+var eventHandler = function(evt) {
+  var event = $.Event(evt);
   tasks.push(event);
   console.log(tasks);
 };
