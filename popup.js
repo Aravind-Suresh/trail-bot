@@ -2,7 +2,7 @@
 * @Author: aravind
 * @Date:   2016-07-29T22:44:05+05:30
 * @Last modified by:   aravind
-* @Last modified time: 2016-07-30T12:04:29+05:30
+* @Last modified time: 2016-07-30T12:34:08+05:30
 */
 
 
@@ -19,14 +19,26 @@ function injectTheScript() {
 
 injectTheScript();
 
+function sendMessageToCurrentTab(data) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, data);
+  });
+};
+
 function record() {
-  chrome.tabs.sendMessage({ 'event': 'record' });
+  sendMessageToCurrentTab({ 'event': 'record' });
 }
 
 function stop() {
-  chrome.tabs.sendMessage({ 'event': 'stop' });
+  sendMessageToCurrentTab({ 'event': 'stop' });
 }
 
 function play() {
-  chrome.tabs.sendMessage({ 'event': 'play' });
+  sendMessageToCurrentTab({ 'event': 'play' });
 }
+
+window.addEventListener('DOMContentLoaded', function() {
+ document.getElementById('record').onclick = record;
+ document.getElementById('stop').onclick = stop;
+ document.getElementById('play').onclick = play;
+}, false);
