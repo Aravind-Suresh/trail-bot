@@ -2,7 +2,7 @@
 * @Author: aravind
 * @Date:   2016-07-29T22:44:05+05:30
 * @Last modified by:   aravind
-* @Last modified time: 2016-07-30T12:34:08+05:30
+* @Last modified time: 2016-07-30T12:56:31+05:30
 */
 
 
@@ -15,7 +15,7 @@ function injectTheScript() {
             chrome.tabs.executeScript(tabs[0].id, {file: "content_script.js"});
         });
     });
-}
+};
 
 injectTheScript();
 

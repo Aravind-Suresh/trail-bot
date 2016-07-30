@@ -2,7 +2,7 @@
 * @Author: aravind
 * @Date:   2016-07-29T22:44:05+05:30
 * @Last modified by:   aravind
-* @Last modified time: 2016-07-30T12:44:54+05:30
+* @Last modified time: 2016-07-30T12:58:22+05:30
 */
 
 var tasks = [];
@@ -11,7 +11,6 @@ var eventHandler = function(event) {
   event = $.Event(event);
   tasks.push(event);
   console.log(tasks);
-  console.log('new event');
 };
 
 function recordDOMEvents() {
