@@ -2,7 +2,7 @@
 * @Author: aravind
 * @Date:   2016-07-29T22:44:05+05:30
 * @Last modified by:   aravind
-* @Last modified time: 2016-07-30T13:31:02+05:30
+* @Last modified time: 2016-07-31T19:25:58+05:30
 */
 
 var tasks = [];
@@ -42,7 +42,7 @@ function dispatchTasks() {
   tasks.forEach(function(event, idx) {
     var _element = $(event.target);
     _element.focus();
-    var _event = generateEvent(event);
+      var _event = generateEvent(event);
     _element.trigger(_event);
     console.log("Trigger:", _event);
   });
